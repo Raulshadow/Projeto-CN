@@ -3,8 +3,8 @@ import Image from '../models/Image';
 export default {
     render(image: Image) {
         return {
-        id: image.id,
-        url: `http://localhost:3333/uploads/${image.path}`,
+            id: image.id,
+            url: `https://projeto-cn-gp8.s3.us-east-1.amazonaws.com/${image.path}`,
         };
     },
 

@@ -1,13 +1,24 @@
-import multer, { diskStorage } from 'multer';
-import path from 'path';
+import multerS3 from 'multer-s3';
+import { S3Client } from '@aws-sdk/client-s3';
+
+// Configuração da instância do S3 com suas credenciais
+const s3 = new S3Client({
+    region: process.env.AWS_REGION,
+    credentials: {
+        accessKeyId: process.env.AWS_ACCESS_KEY_ID as string,
+        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY as string,
+    }
+});
 
 export default {
-    storage: multer.diskStorage({
-        destination: path.join(__dirname, '..', '..', 'uploads'),
-        filename: (request, file, cb) => {
+    storage: multerS3({
+        s3: s3,
+        bucket: 'projeto-cn-gp8', // Nome do seu bucket S3
+        acl: 'public-read', // Define que os arquivos serão públicos
+        contentType: multerS3.AUTO_CONTENT_TYPE, // Define o tipo de conteúdo automaticamente
+        key: (request, file, cb) => {
             const fileName = `${Date.now()}-${file.originalname}`;
-
             cb(null, fileName);
-        },
+        }
     })
 };

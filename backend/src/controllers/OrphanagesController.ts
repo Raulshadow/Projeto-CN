@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import { getRepository } from 'typeorm';
 import Orphanage from '../models/Orphanage';
 import orphanageView from '../views/orphanages_view';
-import * as Yup  from 'yup';
+import * as Yup from 'yup';
 
 export default {
     async index(request: Request, response: Response) {
@@ -37,14 +37,14 @@ export default {
             opening_hours,
             open_on_weekends
         } = request.body;
-    
+
         const orphanagesRepository = getRepository(Orphanage);
 
-        const requestImages = request.files as Express.Multer.File[];
-    
+        const requestImages = request.files as Express.MulterS3.File[]; // Use o tipo correto para multer-s3
+
         const images = requestImages.map(image => {
-            return { path: image.filename }
-        })
+            return { path: image.location }; // `location` fornece a URL do S3
+        });
 
         const data = {
             name,
@@ -53,7 +53,7 @@ export default {
             about,
             instructions,
             opening_hours,
-            open_on_weekends: open_on_weekends == 'true',
+            open_on_weekends: open_on_weekends === 'true',
             images
         };
 
@@ -76,11 +76,10 @@ export default {
             abortEarly: false,
         });
 
-    
         const orphanage = orphanagesRepository.create(data);
-    
+
         await orphanagesRepository.save(orphanage);
-    
+
         return response.status(201).json(orphanage);
     }
 };
