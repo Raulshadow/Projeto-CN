@@ -4,7 +4,7 @@ export default {
     render(image: Image) {
         return {
             id: image.id,
-            url: `https://projeto-cn-gp8.s3.us-east-1.amazonaws.com/${image.path}`,
+            url: `${image.path}`,
         };
     },
 

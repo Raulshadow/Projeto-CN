@@ -5,8 +5,9 @@ import { S3Client } from '@aws-sdk/client-s3';
 const s3 = new S3Client({
     region: process.env.AWS_REGION,
     credentials: {
-        accessKeyId: process.env.AWS_ACCESS_KEY_ID as string,
-        secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY as string,
+        accessKeyId: process.env.aws_access_key_id as string,
+        secretAccessKey: process.env.aws_secret_access_key as string,
+        sessionToken: process.env.aws_session_token as string
     }
 });
 
@@ -14,7 +15,6 @@ export default {
     storage: multerS3({
         s3: s3,
         bucket: 'projeto-cn-gp8', // Nome do seu bucket S3
-        acl: 'public-read', // Define que os arquivos serão públicos
         contentType: multerS3.AUTO_CONTENT_TYPE, // Define o tipo de conteúdo automaticamente
         key: (request, file, cb) => {
             const fileName = `${Date.now()}-${file.originalname}`;
