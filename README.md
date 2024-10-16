@@ -2,29 +2,6 @@
 	Next Level Week #3 🚀
 </h1>
 
-<!-- [![Repo Size](https://img.shields.io/github/repo-size/bryan-lima/NLW-3)](https://github.com/bryan-lima/NLW-3)
-[![Repo File Count](https://img.shields.io/github/directory-file-count/bryan-lima/NLW-3)](https://github.com/bryan-lima/NLW-3)
-[![Developed by Bryan Lima](https://img.shields.io/badge/Developed%20by-Bryan%20Lima-blue.svg?longCache=true&style=flat)](https://github.com/bryan-lima)
-[![License](https://img.shields.io/github/license/bryan-lima/NLW-3)](https://github.com/bryan-lima/NLW-3/blob/master/LICENSE) -->
-
-<p align="center">
-  <a href="https://github.com/bryan-lima/NLW-3">
-    <img alt="Repo Size" src="https://img.shields.io/github/repo-size/bryan-lima/NLW-3">
-  </a>
-	
-  <!-- <a href="https://github.com/bryan-lima/NLW-3">
-    <img alt="Repo File Count" src="https://img.shields.io/github/directory-file-count/bryan-lima/NLW-3">
-  </a> -->
-  
-  <a href="https://github.com/bryan-lima">
-    <img alt="Developed by Bryan Lima" src="https://img.shields.io/badge/Developed%20by-Bryan%20Lima-blue.svg?longCache=true&style=flat">
-  </a>
-
-  <a href="https://github.com/bryan-lima/NLW-3/blob/master/LICENSE">
-    <img alt="License" src="https://img.shields.io/github/license/bryan-lima/NLW-3">
-  </a>
-</p>
-
 O **NLW (Next Level Week)**, em tradução livre, Semana do Próximo Nível, é um evento online organizado e realizado pela **[Rocketseat][rocketseat]** com o intuito de elevar os conhecimentos e habilidades de Devs em apenas uma semana.
 
 A 3º edição do evento, ocorreu entre os dias 12 e 16 de Outubro, no qual foi proposto e realizado o desenvolvimento do projeto **Happy**, tanto aplicação web como mobile, utilizando ReactJS e React Native.
