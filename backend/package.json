@@ -6,7 +6,10 @@
   "license": "MIT",
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
-    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js migration:run"
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
+    "query": "ts-node-dev ./node_modules/typeorm/cli.js",
+    "generate": "ts-node-dev ./node_modules/typeorm/cli.js migration:generate -n migrations",
+    "delete": "ts-node-dev ./node_modules/typeorm/cli.js schema:drop "
   },
   "dependencies": {
     "@aws-sdk/client-s3": "^3.669.0",

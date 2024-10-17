@@ -9,10 +9,10 @@ export default class Orphanage {
     @Column()
     name: string;
 
-    @Column()
+    @Column('decimal', { precision: 10, scale: 8 })
     latitude: number;
 
-    @Column()
+    @Column('decimal', { precision: 11, scale: 8 })
     longitude: number;
 
     @Column()

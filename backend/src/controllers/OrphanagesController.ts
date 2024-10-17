@@ -11,7 +11,6 @@ export default {
         const orphanages = await orphanagesRepository.find({
             relations: ['images']
         });
-
         return response.json(orphanageView.renderMany(orphanages));
     },
 
@@ -48,8 +47,8 @@ export default {
 
         const data = {
             name,
-            latitude,
-            longitude,
+            latitude: Number(latitude),   // Convertendo latitude para número
+            longitude: Number(longitude), // Convertendo longitude para número
             about,
             instructions,
             opening_hours,
@@ -77,7 +76,7 @@ export default {
         });
 
         const orphanage = orphanagesRepository.create(data);
-
+        console.log(orphanage);
         await orphanagesRepository.save(orphanage);
 
         return response.status(201).json(orphanage);
