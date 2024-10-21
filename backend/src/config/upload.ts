@@ -3,12 +3,7 @@ import { S3Client } from '@aws-sdk/client-s3';
 
 // Configuração da instância do S3 com suas credenciais
 const s3 = new S3Client({
-    region: process.env.AWS_REGION,
-    credentials: {
-        accessKeyId: process.env.aws_access_key_id as string,
-        secretAccessKey: process.env.aws_secret_access_key as string,
-        sessionToken: process.env.aws_session_token as string
-    }
+    region: process.env.AWS_REGION
 });
 
 export default {
