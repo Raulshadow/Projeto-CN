@@ -9,6 +9,7 @@ ENV REACT_APP_API_URL=
 RUN yarn global add serve@12
 RUN yarn install
 RUN yarn run build
+RUN chmod +x ./serve.sh
 
 EXPOSE 5000
 
