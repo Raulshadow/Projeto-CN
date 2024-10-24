@@ -15,3 +15,12 @@ ou
 
 # Como fazer o deploy do projeto?
 - `eb depoloy`
+
+# Configurações usadas
+|Etapa  | Campo                  | Valor              |
+|:-:    | :-                     | :-                 |
+|1      | Role                   | LabRole            |
+|1      | EC2 key pair           | Qualquer uma       |
+|1      | EC2 instance profile   | LabInstanceProfile |
+|4      | Instance Types         | t3a.medium         |
+|5      | Manage updates         | Desmarcado         |
