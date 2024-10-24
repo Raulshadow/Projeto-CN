@@ -21,9 +21,12 @@ function OrphanagesMap() {
 
     useEffect(() => {
         api.get('orphanages').then(response => {
+	    console.log(response.data);
             setOrphanages(response.data);
         });
     }, []);
+
+    console.log(orphanages);
 
     return (
         <div id="page-map">
@@ -36,8 +39,8 @@ function OrphanagesMap() {
                 </header>
 
                 <footer>
-                    <strong>Jacareí</strong>
-                    <span>São Paulo</span>
+                    <strong>Aracaju</strong>
+                    <span>Sergipe</span>
                 </footer>
             </aside>
 
