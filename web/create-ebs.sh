@@ -1,7 +1,7 @@
 #!/bin/bash
 
 nome_projeto=$1
-if [$nome_projeto \eq ""]; then
+if [ $nome_projeto = "" ]; then
 	exit 1
 fi
 
